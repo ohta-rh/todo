@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="TodoApp">
+<head>
+  <title>Todo</title>
+  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<div class="wrapper">
+  <div class="container content">
+    <div class="row row-offcanvas row-offcanvas-right">
+      <div class="col-xs-12">
+        <%= yield %>
+      </div>
+    </div><!-- /.row -->
+  </div><!-- /.container -->
+  <div class="push"></div>
+</div><!-- /#wrapper -->
+
+</body>
+</html>

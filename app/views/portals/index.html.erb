@@ -1,0 +1,22 @@
+<h1>Todo App</h1>
+
+<div ng-controller="TasksController">
+  <form ng-submit="add()">
+    <input type="text" ng-model="newTask.title" placeholder="Title" />
+    <input type="text" ng-model="newTask.end_on" placeholder="Due Date" />
+
+    <input type="submit" value="Add Task" class="btn btn-primary">
+  </form>
+
+  <ul class="task-list list-unstyled">
+    <li ng-repeat="task in tasks">
+      {{task.title}}&nbsp;&nbsp;{{task.description}}&nbsp;&nbsp;{{task.end_on}}
+
+      <span ng-show="task.done" class="done">done</span>
+      <span ng-hide="task.done" class="done">
+        <a href="" class="btn btn-success btn-xs" ng-click="done(task.id, $index)">Done !</a>
+      </span>
+      <a href="" class="btn btn-danger btn-xs" ng-click="destroy(task.id, $index)">Destroy !</a>
+    </li>
+  </ul>
+</div>
