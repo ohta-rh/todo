@@ -11,6 +11,6 @@ TodoApp.controller 'TasksController', ['$scope', 'Tasks', ($scope, Tasks) ->
     Task.done(id)
 
   $scope.destroy = (id, index) ->
-    $scope.tasks[index].$delete()
+    $scope.tasks[index].$delete({id: id })
     $scope.posts.splice(index, 1)
 ]
